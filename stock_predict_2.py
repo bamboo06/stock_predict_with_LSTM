@@ -103,7 +103,7 @@ def train_lstm(batch_size=60,time_step=20,train_begin=2000,train_end=5800):
 
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
-        for i in range(200):     #这个迭代次数，可以更改，越大预测效果会更好，但需要更长时间
+        for i in range(10):     #这个迭代次数，可以更改，越大预测效果会更好，但需要更长时间
             for step in range(len(batch_index)-1):
                 _,loss_=sess.run([train_op,loss],feed_dict={X:train_x[batch_index[step]:batch_index[step+1]],Y:train_y[batch_index[step]:batch_index[step+1]],keep_prob:0.5})
             print("Number of iterations:",i," loss:",loss_)
