@@ -140,7 +140,7 @@ def prediction(time_step=20):
         plt.show()
         
         #将预测结果存储为excel
-        cc = （test_predict, test_y）
+        cc = (test_predict, test_y)
         data_df = pd.DataFrame(cc)
         writer = pd.ExcelWriter('stock_pre.xlsx')
         data_df.to_excel(writer,'stock_pre_testy',float_format='%.2f') # float_format 控制精度
