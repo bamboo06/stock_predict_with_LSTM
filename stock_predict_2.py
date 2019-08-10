@@ -145,5 +145,5 @@ def prediction(time_step=20):
         writer = pd.ExcelWriter('stock_pre.xlsx')
         data_df.to_excel(writer,'stock_pre_testy',float_format='%.2f') # float_format 控制精度
         writer.save()
-
+        
 prediction()
