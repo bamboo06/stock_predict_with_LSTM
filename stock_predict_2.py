@@ -107,7 +107,7 @@ def train_lstm(batch_size=60,time_step=20,train_begin=2000,train_end=5800):
             for step in range(len(batch_index)-1):
                 _,loss_=sess.run([train_op,loss],feed_dict={X:train_x[batch_index[step]:batch_index[step+1]],Y:train_y[batch_index[step]:batch_index[step+1]],keep_prob:0.5})
             print("Number of iterations:",i," loss:",loss_)
-        print("model_save: ",saver.save(sess,'model_save2\\modle.ckpt'))
+        print("model_save: ",saver.save(sess,'model_save2/modle.ckpt'))
         #I run the code on windows 10,so use  'model_save2\\modle.ckpt'
         #if you run it on Linux,please use  'model_save2/modle.ckpt'
         print("The train has finished")
