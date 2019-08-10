@@ -138,5 +138,11 @@ def prediction(time_step=20):
         plt.plot(list(range(len(test_predict))), test_predict, color='b',)
         plt.plot(list(range(len(test_y))), test_y,  color='r')
         plt.show()
+        
+        #将预测结果存储为excel
+        writer = pd.ExcelWriter('stock_pre.xlsx')
+        test_predict.to_excel(writer,'pre_y',float_format='%.2f') # float_format 控制精度
+        test_y.to_excel(writer,'test_y',float_format='%.2f') # float_format 控制精度
+        writer.save()
 
 prediction()
